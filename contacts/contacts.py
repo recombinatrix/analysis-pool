@@ -8,26 +8,30 @@ from MDAnalysis.analysis import distances
 
 from tqdm import tqdm  # progress bar
 
-
+# a script to calculate the frequency of contacts between a protein and a ligand, or to generate a timeseries of distances between them
 
 if __name__ == '__main__': # excecute this when the file is run
+
+    # ====== USER EDITABLE SECTION STARTS HERE ======
+    
+    # variables used in calc, you can set these as you require
 
     top = 'path/to/topology.gro' # path to .gro, .tpr or .pdb
     trj = 'path/to/trajectory.xtc' # path to .xtc or .trr
     name = 'protein_ligand_contacts'  # the name of this calculation.  will be used to generate filenames
+
     prot_str = 'protein' # selection string for protein
     lig_str = 'resname Org Org2'  # selection string for ligand, in this case residues named Org and Org2
-    
     # the two selection strings should not overlap
-
-    # variables used in calc, you can set these as you require
-
+    
     cutoff = 4 # cutoff distance in A
     highfreq = 0.8 # what % of frames constitutes a high frequency contact 
-
-    # load the universe
-
+    
+    # now load the universe
     u = mda.Universe(top,trj)
+
+    # ====== USER EDITABLE SECTION ENDS HERE ======
+
 
 # define a function to calculate contacts
 # by default, returns c_df, a dataframe listing all contact events per frame, and count, a dataframe showing the per-frame frequency of contact by reidue pairs
@@ -39,7 +43,7 @@ def contacts(u,prot_str,lig_str,
         savecrude=True, # do you want to save the raw pairwise per-frame contacts as a csv?  This will be very large.  If savedist is true, this will also save the pairwise distances between all residue paris per frame.  That file will be gigantic.   
         skip0=False,  # set to true if you want to exclude the starting frame from the calculations
         highfreq=0.8,  # percentage, generates a dataframe showing only high frequency interactions.  can be set to false to skip that step.  if savecount is true, saves this as a csv
-        name='contacts',  # what is the name of the calculation?  this is used in filenames
+        name='protein_ligand_contacts',  # what is the name of the calculation?  this is used in filenames
         rounding=2, # how many digits are distances rounded to?  Only really relevant for savedist 
         ):
 
