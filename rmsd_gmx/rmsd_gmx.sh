@@ -7,12 +7,6 @@ rmsd() {
 # requires gro, xtc and ndx files 
 # works faster with stripped / dried trajectories
 
-# my memory is that gromacs won't let you easilly fit to one thing, and calculate RMSD of a second thing
-# when you want to calculate ligand RMSD, you need prepare a preexisting trajectory that has been fit to the protein backbone
-# my memory is that this allows you to calculate ligand RMSD fit to the protein using nofit
-# however looking at this script, I seem not to have done that.  Perhaps that only applied to ligand clustering?
-
-
 # expected folders and files
 
 # ./calcs/                      - this is where the RMSD will be saved, as an .xvg
@@ -75,31 +69,12 @@ for sys in ${systems[@]}; do
 }
 
 
+# make an array of systems to calculate over
 
-systems=( "hOCT1_MF1B_p3" "hOCT1_MF1A_p2" "hOCT1_MF1A_p3" "hOCT1_MF1B_p6" "hOCT1_MF1B_p6-clust-switch" "hOCT1-ASP357ASPH_MF1B_p3" "hOCT1-ASP357ASPH_MF1A_p2" "hOCT1-ASP357ASPH_MF1A_p3" "hOCT1-ASP357ASPH_MF1B_p6" )
-rmsd
+systems=( "hOCT1_MF1B_p3" "hOCT1_MF1A_p2" "hOCT1_MF1A_p3" "hOCT1_MF1B_p6")
 
-# systems=( "hOCT1-ASP357ASPH_FNRR_p3" "hOCT1-ASP357ASPH_FNRR_p7" "hOCT1-ASP357ASPH_FNSS_p3" "hOCT1-ASP357ASPH_FNSS_p4" "hOCT1_FNRR_p3" "hOCT1_FNRR_p7" "hOCT1_FNSS_p3" "hOCT1_FNSS_p4" )
-# systems=("hOCT1_MF1B_p6" )
-# rmsd
+# run the calc
 
-# systems=( "hOCT1_THIA_p1" "hOCT1_THIA_p3-2" "hOCT1_THII_p1" "hOCT1_THII_p2" "hOCT1-ASP357ASPH_THIA_p1" "hOCT1-ASP357ASPH_THIA_p3-2" "hOCT1-ASP357ASPH_THII_p1" "hOCT1-ASP357ASPH_THII_p2")
-# systems=( "hOCT1-ASP357ASPH_THIA_p3-2" )
-
-# rmsd
-
-# systems=( "hOCT1_PPNS_p4" "hOCT1_PPNR_p2-3" "hOCT1_PPNS_pCRYO" "hOCT1-ASP357ASPH_PPNS_pCRYO" )
-# rmsd
-
-# systems=( "hOCT1_apo_rebuild" "hOCT1-ASP357ASPH_apo_D357prot"  )
-# rmsd
-
-# systems=( "hOCT1_DTZ_p2-1" "hOCT1_DTZ_p2-2" "hOCT1-ASP357ASPH_DTZ_p2-1" 
-# systems=("hOCT1-ASP357ASPH_DTZ_p2-2"  )
-# rmsd
-
-# systems=("hOCT1_FNSS_p4r1ex"  )
-systems=("hOCT1_FNRR_p7r3ex"  )
 rmsd
 
 # combine all rmsd data into a single csv
@@ -108,10 +83,3 @@ cd calcs
 ./concat.py
 cd ..
 
-# # testing:
-
-# # gmx rms -f ../clean/stripped/hOCT1_FNRR_p7_stripped_fit.xtc -n ../clean/stripped/hOCT1_FNRR_p7_stripped.ndx -s ../cluster/pdb/hOCT1_FNRR_p7_TMDBBlig_clusters.pdb -xvg none -o clustertest.xvg
-# # looks like it ran a comparison against only the first cluster in the record
-
-
-# gmx rms -f ../clean/stripped/hOCT1_FNRR_p7_stripped.xtc -n ../clean/stripped/hOCT1_FNRR_p7_stripped.ndx -s ../cluster/pdb/hOCT1_FNRR_p7_TMDBBlig_clusters.pdb -xvg none -o clustertest.xvg
