@@ -36,7 +36,7 @@ if __name__ == '__main__': # excecute this when the file is run
 # define a function to calculate contacts
 # by default, returns c_df, a dataframe listing all contact events per frame, and count, a dataframe showing the per-frame frequency of contact by reidue pairs
 
-def contacts(u,prot_str,lig_str,
+def run_contacts(u,prot_str,lig_str,
         cutoff=4,  # distances in A <= cuttoff constitute a contact
         savedist=False,  # set to true if you want to save all pairwise ligand/residue distances calculated for every frame.  With large selections this is very slow.  this produces third output, the per frame minimum distance between each residue pair 
         savecount=True, # do you want to save the count as a csv, named 
@@ -123,7 +123,7 @@ def contacts(u,prot_str,lig_str,
 # now, run the contacts
 
 if __name__ == '__main__': # excecute this when the file is run
-    c_df, count = contacts(u,prot_str=prot_str,lig_str=lig_str,
+    c_df, count = run_contacts(u,prot_str=prot_str,lig_str=lig_str,
             cutoff=cutoff,
             savedist=False,
             savecount=True,
