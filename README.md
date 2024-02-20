@@ -23,7 +23,7 @@ Commonly used analysis scripts
 
 ### `rmsd_py`
 
-`rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  It needs to be reorked and doesn't reflect my current practices.
+`rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  **It needs to be reorked** and doesn't reflect my current practices.
 
 ## RMSF
 
