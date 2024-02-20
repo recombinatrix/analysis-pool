@@ -6,6 +6,8 @@ Commonly used analysis scripts
 
 * `contacts_mda/contacts.py` uses mda to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  Can also calculate pairwise distances between the two groups, such as to determine the distance between gating residues, but this becomes very slow when used with large groups of residues.
 
+* `contacts_vmd/` uses vmd to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  This contains three files. `contactFreq.tcl` contains a function to calculate per residue contact frequency between two groups of atoms.  `contactFreq.sh` lets the user define the selections and parameters of the calculations, and the output filenames.   `run_contacts.sh` loads the MD data into VMD, and then executes the other two files. 
+
 ## Clustering
 
 * `cluster/cluster.sh` calculates protein and ligand clusters using gromacs tools.  **This is old and needs to be reworked.**  Requires stripped down trajectories fit to the protein backbone. `clust_trj` is a function to generate those, but in future projects I'll just create them in the initial trajectory processing.
