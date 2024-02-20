@@ -1,12 +1,12 @@
 # Generic analysis scripts
 
-Commonly used analysis scripts
+Commonly used analysis scripts, using gromacs tools, [VMD](https://www.ks.uiuc.edu/Research/vmd/) and [MD Analysis](https://www.mdanalysis.org/)
 
 ## Contact frequency and distance over time
 
-* `contacts_mda/contacts.py` uses mda to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  Can also calculate pairwise distances between the two groups, such as to determine the distance between gating residues, but this becomes very slow when used with large groups of residues.
+* `contacts_mda/contacts.py` uses MD Analysis to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  Can also calculate pairwise distances between the two groups, such as to determine the distance between gating residues, but this becomes very slow when used with large groups of residues.
 
-* `contacts_vmd/` uses vmd to calculate the frequency of contact between two groups of molecules, eg. between a ligand the residues of a protein.  This contains three files.
+* `contacts_vmd/` uses VMD to calculate the frequency of contact between two groups of molecules, eg. between a ligand the residues of a protein.  This contains three files.
     1. `contactFreq.tcl` contains a function to calculate per residue contact frequency between two groups of atoms.  It's not mine; I don't remember where it originates.
     2. `contactFreq.sh` lets the user define the selections and parameters of the calculations, and the output filenames.
     3. `run_contacts.sh` loads the MD data into VMD, and then executes the other two files.
