@@ -18,7 +18,7 @@ atomselect macro tail {resname OP48 and resid 1234 and name C1 C2 C3 H1 H2 H3  }
 #   contact frequency is only reported for contacts present in at least $threshold percent of the simulation
 #   output is a whitespace delimited text file
 
-contactFreq {GlyT2} {ligand} 4 0 contact-GlyT2_ligand.dat # change resid to whatever, this will save the data to 
-contactFreq {GlyT2} {head} 4 0 contact-GlyT2_ligand-head.dat # change resid to whatever
-contactFreq {GlyT2} {tail} 4 0 contact-OP48-resid_1234_headgroup.dat # change resid to whatever
+contactFreq {GlyT2} {ligand} 4 0 contact-GlyT2_ligand.dat
+contactFreq {GlyT2} {head} 4 0 contact-GlyT2_ligand-head.dat
+contactFreq {GlyT2} {tail} 4 0 contact-GlyT2_ligand-tail.dat
 
