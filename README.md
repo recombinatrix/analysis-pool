@@ -21,7 +21,7 @@ Commonly used analysis scripts, using gromacs tools, [VMD](https://www.ks.uiuc.e
 
 * `rmsd_gmx/rmsd_gmx.sh` is a more complex example using gromacs tools to calculate RMSD, and python to process data.  It runs multiple different calculations including protein backbone RMSD, protein subdomain backbone RMSD, and ligand all atom RMSD, then processes the data into a single csv using python scripts called `concat.py`.
 
-* `rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  **It needs to be reorked and doesn't reflect my current practices.**
+* `rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  **This needs to be reworked and doesn't reflect my current practices.**
 
 ## RMSF
 
