@@ -13,7 +13,7 @@ Commonly used analysis scripts, using gromacs tools, [VMD](https://www.ks.uiuc.e
 
 ## Clustering
 
-* `cluster/cluster.sh` calculates protein and ligand clusters using gromacs tools.  **This is old and needs to be reworked.**  Requires stripped down trajectories fit to the protein backbone. `clust_trj` is a function to generate those, but in future projects I'll just create them in the initial trajectory processing.
+* `cluster/cluster.sh` calculates protein and ligand clusters using gromacs tools.  Requires stripped down trajectories fit to the protein backbone. `clust_trj` is a function to generate those, but in future projects I'll just create them in the initial trajectory processing.  **This is old and needs to be reworked.**
 
 ## RMSD
 
@@ -21,7 +21,7 @@ Commonly used analysis scripts, using gromacs tools, [VMD](https://www.ks.uiuc.e
 
 * `rmsd_gmx/rmsd_gmx.sh` is a more complex example using gromacs tools to calculate RMSD, and python to process data.  It runs multiple different calculations including protein backbone RMSD, protein subdomain backbone RMSD, and ligand all atom RMSD, then processes the data into a single csv using python scripts called `concat.py`.
 
-* `rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  **It needs to be reorked** and doesn't reflect my current practices.
+* `rmsd_py/rmsd.py` is an overly complex, poorly structured example of calculating RMSD with MD Analysis.  **It needs to be reorked and doesn't reflect my current practices.**
 
 ## RMSF
 
