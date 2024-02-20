@@ -1,11 +1,8 @@
 #!/usr/bin/env python                                                       
 # coding: utf-8 
 
-import matplotlib.pyplot as plt                                                 
 import numpy as np                                                              
 import pandas as pd                                                             
-import scipy as sp
-import seaborn as sns
 
 # get file list
 
