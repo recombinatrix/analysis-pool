@@ -12,9 +12,7 @@ Commonly used analysis scripts
 
 ### `cluster/`
 
-`cluster/cluster.sh` calculates protein and ligand clusters using gromacs tools 
-Prepare trajectories run clusters of protein and ligand.  **This is old and needs to be reworked.**  Requires stripped down trajectories fit to the protein backbone.
-`cluster.sh` includes a function to generate those, but in future projects I'll just create them in the initial trajectory processing
+`cluster/cluster.sh` calculates protein and ligand clusters using gromacs tools.  **This is old and needs to be reworked.**  Requires stripped down trajectories fit to the protein backbone. `clust_trj` is a function to generate those, but in future projects I'll just create them in the initial trajectory processing
 
 ## RMSD
 
