@@ -30,6 +30,6 @@ Commonly used analysis scripts
 
 ### `rmsf_gmx`
 
-`rmsf_gmx/rmsf_gmx_simple.sh` is a simple example of how to calculate RMSF using gromacs tools, saving the calculations and producing a pdb with the RMSF values saved as a β-factor
+`rmsf_gmx/rmsf_gmx_simple.sh` is a simple example of how to calculate RMSF using gromacs tools, also producing a pdb with the RMSF values saved as a β-factor
 
 `rmsf_gmx/rmsf_gmx.sh` is a more complex example using gromacs tools to calculate RMSF, producing data files and pdb files as above.  Uses python to process data.  It runs multiple different calculations including protein RMSF and protein subdomain RMSF, then processes the data into a small number of csv using python scripts called `concat.py`
