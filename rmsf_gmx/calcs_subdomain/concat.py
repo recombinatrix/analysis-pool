@@ -7,9 +7,9 @@ import pandas as pd
 
 import os
 flist = os.listdir()
-# this was for putting apo first; not doing that anymore because who cares
-# aflist = [f for f in flist if "xvg" in f and "apo" in f and "#" not in f]
-# rflist = aflist + [f for f in flist if "xvg" in f and "#" not in f and "apo" not in f] # put apo first so I can calculate difference from apo
+
+
+# the filename -> metadata parsing will require tweaking for any given project
 
 rflist = [f for f in flist if "xvg" in f and "#" not in f] # put apo first so I can calculate difference from apo
 mdict = {'hOCT1-ASP357ASPH' : 'D357H', 'hOCT1' : 'D357-'}

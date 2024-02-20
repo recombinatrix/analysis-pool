@@ -6,6 +6,8 @@ import pandas as pd
 
 # get file list
 
+# the filename -> metadata parsing will require tweaking for any given project
+
 model_d = {
     'hOCT1' : 'D357-',
     'hOCT1-ASP357ASPH' : 'D357H'
