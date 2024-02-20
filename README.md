@@ -1,4 +1,4 @@
-# analysis-pool
+# Generic analysis scripts
 
 Commonly used analysis scripts
 
