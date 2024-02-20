@@ -2,11 +2,11 @@
 
 Commonly used analysis scripts
 
-## Contact frequency
+## Contact frequency and distance over time
 
 ### `contacts_mda/`
 
-`contacts_mda/contacts.py` uses mda to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  Can also calculate pairwise distances between the two groups, but this is very slow for large numebrs of residues
+`contacts_mda/contacts.py` uses mda to calculate the frequency of contact between two groups of molecules, eg between a ligand the residues of a protein.  Can also calculate pairwise distances between the two groups, such as to determine the distance between gating residues, but this becomes very slow when used with large groups of residues
 
 ## Clustering
 
