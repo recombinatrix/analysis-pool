@@ -8,22 +8,26 @@ from MDAnalysis.analysis import distances
 
 from tqdm import tqdm  # progress bar
 
-top = 'path/to/topology.gro' # path to .gro, .tpr or .pdb
-trj = 'path/to/trajectory.xtc' # path to .xtc or .trr
-name = 'protein_ligand_contacts'  # the name of this calculation.  will be used to generate filenames
-prot_str = 'protein' # selection string for protein
-lig_str = 'resname Org Org2'  # selection string for ligand, in this case residues named Org and Org2
 
-# the two selection strings should not overlap
 
-# variables used in calc, you can set these as you require
+if __name__ == '__main__': # excecute this when the file is run
 
-cutoff = 4 # cutoff distance in A
-highfreq = 0.8 # what % of frames constitutes a high frequency contact 
+    top = 'path/to/topology.gro' # path to .gro, .tpr or .pdb
+    trj = 'path/to/trajectory.xtc' # path to .xtc or .trr
+    name = 'protein_ligand_contacts'  # the name of this calculation.  will be used to generate filenames
+    prot_str = 'protein' # selection string for protein
+    lig_str = 'resname Org Org2'  # selection string for ligand, in this case residues named Org and Org2
+    
+    # the two selection strings should not overlap
 
-# load the universe
+    # variables used in calc, you can set these as you require
 
-u = mda.Universe(top,trj)
+    cutoff = 4 # cutoff distance in A
+    highfreq = 0.8 # what % of frames constitutes a high frequency contact 
+
+    # load the universe
+
+    u = mda.Universe(top,trj)
 
 # define a function to calculate contacts
 # by default, returns c_df, a dataframe listing all contact events per frame, and count, a dataframe showing the per-frame frequency of contact by reidue pairs
@@ -114,14 +118,15 @@ def contacts(u,prot_str,lig_str,
 
 # now, run the contacts
 
-c_df, count = contacts(u,prot_str=prot_str,lig_str=lig_str,
-        cutoff=cutoff,
-        savedist=False,
-        savecount=True,
-        savecrude=True,
-        skip0=True,
-        name=name,
-        highfreq=highfreq)
+if __name__ == '__main__': # excecute this when the file is run
+    c_df, count = contacts(u,prot_str=prot_str,lig_str=lig_str,
+            cutoff=cutoff,
+            savedist=False,
+            savecount=True,
+            savecrude=True,
+            skip0=True,
+            name=name,
+            highfreq=highfreq)
 
 # done
 
